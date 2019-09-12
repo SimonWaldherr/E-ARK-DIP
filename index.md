@@ -1,9 +1,23 @@
 ---
-title: E-ARK Dissemination Information Package
+title: E-ARK DIP
+subtitle: Specification for Dissemination Information Packages
+abstract: |
+          This is the extension of the E-ARK CSIP profile for creation of an
+          E-ARK DIP. The profile describes the Dissemination Information Package
+          (DIP) specification and the implementation of METS for packaging
+          OAIS conformant Information Packages. The profile is accompanied by
+          a text document explaining the details of use of this profile.
+          This will enable repository interoperability and assist in the
+          management of the preservation of digital content.
+version: 2.0.1
+date: 09.09.2019
 ---
 
+{{ page.subtitle }}
+================
+
 # Preface
-## I. Aim of the specification
+## I. Aim of the Specification
 This specification is one of several related specifications. The single most important aim of all of these specifications is the provision of a common set of specifications for packaging digital information for archiving purposes. The specifications are based on common, international standards for transmitting, describing and preserving digital data. They have been produced to help data creators, software developers and digital archives to tackle the challenge of short-, medium- and long-term data management and reuse in a sustainable, authentic, cost-efficient, manageable and interoperable way.
 
 The foundation upon which the specifications are built is the Reference model for an Open Archival Information System (OAIS) (OAIS Reference model) which has Information Packages as its basis. Familiarity with the core functional entities of OAIS is a prerequisite for understanding the specifications.
@@ -14,24 +28,89 @@ A visualisation of the current specification network can be seen here:
 
 **Figure I:** Diagram showing E-ARK specification dependency hierarchy.
 
-| Specification | Aim and Goals  |
-|---------------|----------------|
-| Common Specification for Information Packages | This document introduces the concept of a Common Specification for Information Packages (CSIP). Its three main purposes are to: <ul><li>Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages.</li><li>Establish a common base for the development of more specific Information Package definitions and tools within the digital preservation community.</li><li>Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation. </li></ul>Ultimately the goal of the Common Specification is to reach a level of interoperability between all Information Packages so that tools implementing the Common Specification can be adopted by institutions without the need for further modifications or adaptations. |
-| E-ARK SIP | The main aims of this specification are to:<ul><li>Define a general structure for a Submission Information Package format suitable for a wide variety of archival scenarios, e.g. document and image collections, databases or geographical data.</li><li>Enhance interoperability between Producers and Archives.</li><li>Recommend best practices regarding metadata, content and structure of Submission Information Packages.</li></ul> |
-| E-ARK AIP | The main aims of this specification are to:<ul><li>Define a generic structure of the AIP format suitable for a wide variety of data types, such as document and image collections, archival records, databases or geographical data.</li><li>Recommend a set of metadata related to the structural and the preservation aspects of the AIP as implemented by the reference implementation (earkweb).</li><li>Ensure the format is suitable to store large quantities of data.</li></ul> |
-| E-ARK DIP | The main aims of this specification are to:<ul><li>Define a generic structure of the DIP format suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.</li><li>Recommend a set of metadata related to the structural and access aspects of the DIP.</li></ul>  |
-| Content Information Type Specifications | The main aim and goal of a Content Information Type Specification is to:<ul><li>Define, in technical terms, how data and metadata must be formatted and placed within a CSIP Information Package in order to achieve interoperability in exchanging specific Content Information.</li></ul>The number of possible Content Information Type Specifications is unlimited. For at list of existing Content Information Type Specifications see, and read more about  Content Information Type Specifications in the Common Specification for Information Packages |
+### Overview of the E-ARK Specifications
 
-## II Organisational support
-This specification is maintained by the Digital Information LifeCycle Interoperability Standards Board (DILCIS Board, http://dilcis.eu/). The DILCIS Board was created to enhance and maintain the draft specifications developed in the European Archival Records and Knowledge Preservation Project (E-ARK project, http://eark-project.com/) which concluded in January 2017. The Board consists of eight members, but there is no restriction on the number of participants in the work. All Board documents and specifications are stored in GitHub (https://github.com/DILCISBoard) while published versions are made available on the Board webpage. Since 2018 the DILCIS Board has been responsible for the core specifications in the Connecting Europe Facility eArchiving Building Block https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eArchiving.
+#### Common Specification for Information Packages (E-ARK CSIP)
+This document introduces the concept of a Common Specification for Information Packages (CSIP). Its three main purposes are to:
 
-## III Authors
-A full list of contributors to this specification, as well as the revision history can be found in Appendix 1.
+- Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages.
+- Establish a common base for the development of more specific Information Package definitions and tools within the digital preservation community.
+- Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation.
+- Ultimately the goal of the Common Specification is to reach a level of interoperability between all Information Packages so that tools implementing the Common Specification can be adopted by institutions without the need for further modifications or adaptations.
+
+#### Specification for Submission Information Packages (E-ARK SIP)
+The main aims of this specification are to:
+
+- Define a general structure for a Submission Information Package format suitable for a wide variety of archival scenarios, e.g. document and image collections, databases or geographical data.
+- Enhance interoperability between Producers and Archives.
+- Recommend best practices regarding metadata, content and structure of Submission Information Packages.
+
+#### Specification for Archival Information Packages (E-ARK AIP)
+The main aims of this specification are to:
+
+- Define a generic structure of the AIP format suitable for a wide variety of data types, such as document and image collections, archival records, databases or geographical data.
+- Recommend a set of metadata related to the structural and the preservation aspects of the AIP as implemented by the reference implementation (earkweb).
+- Ensure the format is suitable to store large quantities of data.
+
+#### Specification for Dissemination Information Packages (E-ARK DIP)
+The main aims of this specification are to:
+
+- Define a generic structure of the DIP format suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.
+- Recommend a set of metadata related to the structural and access aspects of the DIP.
+
+#### Content Information Type Specifications (E-ARK CITS)
+The main aims of a Content Information Type Specification are to:
+
+- Define, in technical terms, how data and metadata must be formatted and placed within a CSIP Information Package in order to achieve interoperability in exchanging specific Content Information.
+- The number of possible Content Information Type Specifications is unlimited. For at list of existing Content Information Type Specifications see, and read more about  Content Information Type Specifications in the Common Specification for Information Packages.
+
+## II. Organisational support
+This specification is maintained by the Digital Information LifeCycle Interoperability Standards Board (DILCIS Board, <http://dilcis.eu/>). The DILCIS Board was created to enhance and maintain the draft specifications developed in the European Archival Records and Knowledge Preservation Project (E-ARK project, <http://eark-project.com/>) which concluded in January 2017. The Board consists of eight members, but there is no restriction on the number of participants in the work. All Board documents and specifications are stored in GitHub (<https://github.com/DILCISBoard/>) while published versions are made available on the Board webpage. Since 2018 the DILCIS Board has been responsible for the core specifications in the Connecting Europe Facility eArchiving Building Block <https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eArchiving/>.
+
+## III. Authors & Revision History
+A full list of contributors to this specification, as well as the revision history can be found in the [Postface material](#postface).
+
+{{ page.title }}
+================
+
+{{ page.subtitle }}
+-------------------
+
+Version: {{ page.version }}
+
+Date: {{ page.date }}
+
+1\.  [Introduction](#introduction)  
+1.1\.  [Definition of a DIP](#definitionofadip)  
+2\.  [Structure](#structure)  
+3\.  [Content Information Types](#contentinformationtypes)  
+4\.  [Metadata](#metadata)  
+4.1\.  [METS](#mets)  
+4.2\.  [PREMIS](#premis)  
+4.2.1\.  [Metadata regarding Representations and Access Software](#metadataregardingrepresentationsandaccesssoftware)  
+4.2.1.1\.  [Description 1 - The description of DIP representation formats](#description1-thedescriptionofdiprepresentationformats)  
+4.2.1.2\.  [Description 2 - The description of Access Software](#description2-thedescriptionofaccesssoftware)  
+4.2.1.3\.  [Description 3 - The description of the relation between the representations and the Access Software](#description3-thedescriptionoftherelationbetweentherepresentationsandtheaccesssoftware)  
+4.3\.  [Descriptive metadata - e.g. EAD](#descriptivemetadata-e.g.ead)  
+4.3.1\.  [Access restrictions](#accessrestrictions)  
+5\.  [Appendices](#appendices)  
+5.1\.  [Appendix A: E-ARK Information Package METS example](#appendixa:e-arkinformationpackagemetsexample)  
+5.2\.  [Appendix B: External Schema](#appendixb:externalschema)  
+5.2.1\.  [E-ARK SIP METS Extension](#e-arksipmetsextension)  
+5.3\.  [Appendix C: External Vocabularies](#appendixc:externalvocabularies)  
+5.3.1\.  [OAIS Package type](#oaispackagetype)  
+5.3.2\.  [dmdSec status](#dmdsecstatus)  
+5.4\.  [Appendix D: A Full List of E-ARK DIP Requirements](#appendixd:afulllistofe-arkdiprequirements)  
+6\.  [Bibliography](#bibliography)  
 
 
-# Introduction
+<a name="introduction"></a>
 
-## Definition of a DIP
+# 1\. Introduction
+
+<a name="definitionofadip"></a>
+
+## 1.1\. Definition of a DIP
 
 The OAIS reference model defines a DIP as:
 
@@ -48,15 +127,17 @@ First of all, the DIP looks like the AIP: It replicates the structure of the AIP
 An E-ARK AIP may in its entirety therefore also be a E-ARK DIP, however in most cases it is necessary to convert from an AIP to a DIP.  The DIP allows for example for the inclusion of new DIP representation formats, which are more user-friendly than the AIP formats that are intended for long-term preservation purposes.
 It also allows for the updating of the metadata as well as for the addition of new metadata elements.  Representation Information, which is required for rendering and understanding the intellectual content, might also be added, and as a direct consequence, there may be a need for new folders and files, for example within the ‘Documentation’ folder.
 
-# Structure
+<a name="structure"></a>
+
+# 2\. Structure
 The folder structure of an E-ARK DIP must comply with the requirements for the folder structure for a CSIP, see [Folder structure of the CSIP](http://earkcsip.dilcis.eu/#41-folder-structure-of-the-csip).
 
 The CSIP folder structure and its requirements is visualised in the figure below:
 
 ![IP Folder Structure](./media/Fig2DIP.svg)
 
-- Green boxes represent folders
-- Red boxes represent files.
+- Blue boxes represent folders
+- Yellow boxes represent files.
 - Boxes with full lines represent mandatory files/folders
 - Boxes with dotted lines represent optional files/folders.
 
@@ -69,7 +150,9 @@ It is possible that an AIP in its current state and in its entirety can be deliv
 That E-ARK DIP can contain the submission representation, and one or more preservation representations. Often, however, the OAIS is interested in leaving out irrelevant data and metadata and only present the
 Consumer with the data and metadata that the Consumer is interested in. This could be isolated to the content in one single representation in an E-ARK AIP, or maybe only a portion of a single representation in an E-ARK AIP. Maybe even only one specific file. The point here is that a plethora of different E-ARK DIPs can be created out of an E-ARK AIP or several E-ARK AIPs.
 
-# Content Information Types
+<a name="contentinformationtypes"></a>
+
+# 3\. Content Information Types
 
 Content Information is *“A set of information that is the original target of preservation or
 that includes part or all of that information. It is an Information Object composed of its Content
@@ -87,7 +170,9 @@ Content Information Types](http://earkcsip.dilcis.eu/#61-content-information-typ
   -  The DIP section could mention and list relevant access software for the Content Information Type
 
 
-# Metadata
+<a name="metadata"></a>
+
+# 4\. Metadata
 The DIP metadata is based upon the existing CSIP, E-ARK SIP and E-ARK AIP specifications.
 The metadata descriptions provided in this document cover the three core metadata categories:
 
@@ -100,7 +185,9 @@ One of the challenges when dividing metadata between preservation metadata and d
 This leaves the question - where should this access and dissemination information be registered? This E-ARK DIP specification describes two ways of using EAD and PREMIS for registering Access Rights and Access Software. These are possible ways and not yet recommendations.
 
 
-## METS
+<a name="mets"></a>
+
+## 4.1\. METS
 
 METS (Metadata Encoding and Transmission Standard) is a standard for encoding descriptive, administrative, and structural metadata expressed using the XML Schema Language.
 The use of METS is mandatory if it must comply with CSIP. See CSIP for the general use of METS in information packages.
@@ -137,10 +224,10 @@ In the following the major differences between an XML instance for METS for an E
 
 **Node level: mets root**
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
-| <a name="DIP1"></a>**DIP1** | **Package Identifier** <br/> `mets/@OBJID` | Note that the value of the `mets/@OBJID attribute` for the DIP is expected to be different from the SIP and AIP to reflect the creation of a new package. | **1..1** <br/> MUST |
-| <a name="DIP2"></a>**DIP2** | **METS Profile** <br/> `mets/@PROFILE` | The value is set to "https://earksip.dilcis.eu/profile/E-ARK-DIP.xml". | **1..1** <br/> MUST |
+|  ID     | Name, Location & Description | Card & Level |
+| ------- | ---------------------------- | ------------ |
+| <a name="DIP1"></a>**DIP1** | **Package Identifier** <br/> `mets/@OBJID` <br/> Note that the value of the `mets/@OBJID attribute` for the DIP is expected to be different from the SIP and AIP to reflect the creation of a new package. | **1..1** <br/> MUST |
+| <a name="DIP2"></a>**DIP2** | **METS Profile** <br/> `mets/@PROFILE` <br/> The value is set to "https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml". | **1..1** <br/> MUST |
 
 
 **Example:** METS root element showing use of `csip:@OTHERTYPE` attribute when an appropriate package content category value is not available in the vocabulary. The `@TYPE` attribute value is set to OTHER.
@@ -162,9 +249,9 @@ In the following the major differences between an XML instance for METS for an E
 
 **Node level: metsHdr**
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
-| <a name="DIP3"></a>**DIP3** | **OAIS Package type information** <br/> `metsHdr[@csip:OAISPACKAGETYPE=`DIP`]` | The in CSIP added attribute `@csip:OAISPACKAGETYPE` is used with the value "DIP". <br/> **See also:** <a href="#VocabularyOAISPackageType" >OAIS Package type</a> | **1..1** <br/> MUST |
+|  ID     | Name, Location & Description | Card & Level |
+| ------- | ---------------------------- | ------------ |
+| <a name="DIP3"></a>**DIP3** | **OAIS Package type information** <br/> `metsHdr[@csip:OAISPACKAGETYPE=`DIP`]` <br/> The in CSIP added attribute `@csip:OAISPACKAGETYPE` is used with the value "DIP". <br/> **See also:** [OAIS Package type](#VocabularyOAISPackageType) | **1..1** <br/> MUST |
 
 
 **Example:** METS agent example of the mandatory agent
@@ -183,9 +270,9 @@ In the following the major differences between an XML instance for METS for an E
 
 **Node level: dmdSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
-| <a name="DIP4"></a>**DIP4** | **Status of the descriptive metadata** <br/> `dmdSec/@STATUS` | Indicates the status of the package using a fixed vocabulary. The status SHOULD in a DIP be set to "CURRENT". <br/> **See also:** <a href="#VocabularyStatus" >dmdSec status</a> | **0..1** <br/> SHOULD |
+|  ID     | Name, Location & Description | Card & Level |
+| ------- | ---------------------------- | ------------ |
+| <a name="DIP4"></a>**DIP4** | **Status of the descriptive metadata** <br/> `dmdSec/@STATUS` <br/> Indicates the status of the package using a fixed vocabulary. The status SHOULD in a DIP be set to "CURRENT". <br/> **See also:** [dmdSec status](#VocabularyStatus) | **0..1** <br/> SHOULD |
 
 
 **Example:** METS example of referencing the descriptive metadata which is described with an EAD document
@@ -201,27 +288,31 @@ In the following the major differences between an XML instance for METS for an E
 **Node level: admSec**
 
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
-| <a name="REF_CSIP_1"></a>**REF_CSIP_1** | **Administrative metadata** <br/>  | The DIP <amdSec> element should comply with  <br/>  amdSec requirements in the CSIP profile. |  <br/> SHOULD |
+|  ID     | Name, Location & Description | Card & Level |
+| ------- | ---------------------------- | ------------ |
+| <a name="REF_CSIP_1"></a>**REF_CSIP_1** | **Administrative metadata** <br/>  <br/> The DIP <amdSec> element should comply with  <br/>  amdSec requirements in the CSIP profile. |  <br/> SHOULD |
 
 **Node level: fileSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
-| <a name="REF_CSIP_2"></a>**REF_CSIP_2** | **File section** <br/>  | The DIP fileSec element should comply with  <br/>  fileSec requirements in the CSIP profile. |  <br/> SHOULD |
+|  ID     | Name, Location & Description | Card & Level |
+| ------- | ---------------------------- | ------------ |
+| <a name="REF_CSIP_2"></a>**REF_CSIP_2** | **File section** <br/>  <br/> The DIP fileSec element should comply with  <br/>  fileSec requirements in the CSIP profile. |  <br/> SHOULD |
 
 **Node level: structMap**
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
-| <a name="REF_CSIP_3"></a>**REF_CSIP_3** | **Structural description of the package** <br/>  | The DIP structMap element should comply with  <br/>  structMap requirements in the CSIP profile. |  <br/> SHOULD |
+|  ID     | Name, Location & Description | Card & Level |
+| ------- | ---------------------------- | ------------ |
+| <a name="REF_CSIP_3"></a>**REF_CSIP_3** | **Structural description of the package** <br/>  <br/> The DIP structMap element should comply with  <br/>  structMap requirements in the CSIP profile. |  <br/> SHOULD |
 
-## PREMIS
+<a name="premis"></a>
+
+## 4.2\. PREMIS
 PREMIS (Preservation Metadata: Implementation Strategies) is a standard that mainly caters for long-term preservation and technical usability, which for example is used to facilitate a range of preservation strategies including migration and emulation.
 From an Access perspective, PREMIS especially satisfies the requirements pertaining to the recording of Representation Information. It is practical to state in a formalised and consistent way how the Access Software should behave and where it should look when dealing with different pieces of information, such as which representation formats are included in the DIP.
 
-### Metadata regarding Representations and Access Software
+<a name="metadataregardingrepresentationsandaccesssoftware"></a>
+
+### 4.2.1\. Metadata regarding Representations and Access Software
 In PREMIS, a representation is a "set of files, including structural metadata, needed for a complete and reasonable rendition of an Intellectual Entity." See  [PREMIS Editorial Committee (2015). "PREMIS Data Dictionary for Preservation Metadata", p.8](http://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf).
 
 One of the core concepts in PREMIS is the above formulated definition of a representation, but it is also important to note that the CSIP structure also incorporates physical management of different representations. When implementing PREMIS in CSIPs one must therefore choose if there must exist PREMIS files at representation level or at root level only (see CSIP) and one must also choose how fine-grained each description should be.
@@ -233,7 +324,9 @@ The descriptions below therefore show how to:
 2.  Describe which piece(s) of Access Software is/are needed to render a specific DIP representation format. Several pieces of software may indeed be needed (description 2 below);
 3.  Describe the relationship between the DIP representation format and its Access Software (description 3 below).
 
-#### Description 1 - The description of DIP representation formats
+<a name="description1-thedescriptionofdiprepresentationformats"></a>
+
+#### 4.2.1.1\. Description 1 - The description of DIP representation formats
 In order to describe the specific DIP representation format the semantic component "1.4 significantProperties" is used. An example is:
 ```xml
 <object xsi:type="representation">
@@ -250,7 +343,9 @@ In order to describe the specific DIP representation format the semantic compone
 ```
 Note that the object type is "representation" and that the objectIdentifierType value is "filepath", which according to the AIP specification is an IP scope value. The objectIdentifierValue is the file path to the representation folder or could be a file path to a file.
 
-#### Description 2 - The description of Access Software
+<a name="description2-thedescriptionofaccesssoftware"></a>
+
+#### 4.2.1.2\. Description 2 - The description of Access Software
 In PREMIS 3.0 a description of an environment has become an object itself, so that both non-environmental objects and environmental objects exist. Access Software is therefore an environmental object which per default is an intellectual entity.
 The semantic unit "1.9 environmentFunction" is conceived to describe the environment object(s) with different levels of granularity. It is suggested to use [the vocabulary from Library of Congress](http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html).
 The semantic unit "1.10 environmentDesignation" is used for information identifying the environment by using human-readable language which can be expected to be understood outside of a digital repository.
@@ -280,7 +375,9 @@ See the example which follows this vocabulary:
 </object>
 ```
 
-#### Description 3 - The description of the relation between the representations and the Access Software
+<a name="description3-thedescriptionoftherelationbetweentherepresentationsandtheaccesssoftware"></a>
+
+#### 4.2.1.3\. Description 3 - The description of the relation between the representations and the Access Software
 
 In order to establish a connection between the DIP representation format to be rendered and the Access Software to render it, it is necessary to use the semantic unit "1.13 relationship". The relationship element can bind both non-environmental objects together with environmental objects and it can bind environmental objects together with other environmental objects. The following example shows how the DIP representation format can be related to the Access Software:
 
@@ -314,13 +411,17 @@ In order to identify the Access Software, which is used to render the representa
 
 Since it is not always possible to render the DIP representation formats with one piece of Access Software, it can be necessary to model software dependencies and sequences between several pieces of software in PREMIS.
 
-## Descriptive metadata - e.g. EAD
+<a name="descriptivemetadata-e.g.ead"></a>
+
+## 4.3\. Descriptive metadata - e.g. EAD
 
 Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK DIP allows for the inclusion of any kind of descriptive metadata.
 The E-ARK project reached the conclusion that EAD was one of the most used. See the full report
 [D3.1 E-ARK Report on Available Best Practices](http://www.eark-project.com/resources/project-deliverables/6-d31-e-ark-report-on-available-best-practices). A common E-ARK EAD guideline is yet to be developed. But for information purposes and since the previous DIP specification described a way to register Access Rights Information the text is given here:
 
-### Access restrictions
+<a name="accessrestrictions"></a>
+
+### 4.3.1\. Access restrictions
 OAIS states:
 > Access Rights Information: The information that identifies the access restrictions pertaining
 > to the Content Information, including the legal framework, licensing terms, and access control.
@@ -370,34 +471,171 @@ EAD example of \<chronlist>
  </chronlist>
 </accessrestrict>
 ```
+<a name="appendices"></a>
 
-## Bibliography
+# 5\. Appendices
+
+<a name="appendixa:e-arkinformationpackagemetsexample"></a>
+
+## 5.1\. Appendix A: E-ARK Information Package METS example
+
+
+**Example 1:** Example of a whole METS document describing an dissimination information package with no representations.
+
+```xml
+<mets:mets OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Accounting records of 2017" TYPE="OTHER" OTHERTYPE="Accounting" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-DIP.xml" schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS http://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd https://dilcis.eu/XML/METS/SIPExtensionMETS http://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
+  <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" OAISPACKAGETYPE="SIP">
+    <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+      <mets:name>RODA-in</mets:name>
+      <mets:note NOTETYPE="SOFTWARE VERSION">2.1.0-beta.7</mets:note>
+    </mets:agent>
+  </mets:metsHdr>
+  <mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00" STATUS="CURRENT">
+    <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" MDTYPEVERSION="2002" type="simple" href="metadata/descriptive/ead2002.xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256">
+    </mets:mdRef>
+  </mets:dmdSec>
+  <mets:amdSec>
+    <mets:digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" CREATED="2018-04-24T14:37:52.783+01:00">
+      <mets:mdRef LOCTYPE="URL" type="simple" href="metadata/preservation/premis1.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-256" LABEL="premis1.xml">
+      </mets:mdRef>
+    </mets:digiprovMD>
+    <mets:digiprovMD ID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" CREATED="2018-04-24T14:47:52.783+01:00">
+      <mets:mdRef LOCTYPE="URL" type="simple" href="metadata/preservation/premis2.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="2854" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f" CHECKSUMTYPE="SHA-256" LABEL="premis2.xml">
+      </mets:mdRef>
+    </mets:digiprovMD>
+  </mets:amdSec>
+  <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
+    <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
+      <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256" FILEFORMATNAME="Microsoft Word for Windows" FILEFORMATVERSION="2007 onwards" FORMATREGISTRY="PRONOM" FORMATREGISTRYKEY="fmt/412">
+        <mets:FLocat LOCTYPE="URL" type="simple" href="documentation/File.docx">
+        </mets:FLocat>
+      </mets:file>
+      <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A82" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256" FILEFORMATNAME="Microsoft Word for Windows" FILEFORMATVERSION="2007 onwards" FORMATREGISTRY="PRONOM" FORMATREGISTRYKEY="fmt/412">
+        <mets:FLocat LOCTYPE="URL" type="simple" href="documentation/File2.docx">
+        </mets:FLocat>
+      </mets:file>
+    </mets:fileGrp>
+    <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="Schemas">
+      <mets:file ID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6" MIMETYPE="application/xml" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256" FILEFORMATNAME="XML Schema Definition" FORMATREGISTRY="PRONOM" FORMATREGISTRYKEY="x-fmt/280">
+        <mets:FLocat LOCTYPE="URL" type="simple" href="schemas/ead2002.xsd">
+        </mets:FLocat>
+      </mets:file>
+    </mets:fileGrp>
+    <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" USE="Representations/Submission/Data" CONTENTINFORMATIONTYPE="SIARDDK">
+      <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FD" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" FILEFORMATNAME="Extensible Markup Language" FILEFORMATVERSION="1.0" FORMATREGISTRY="PRONOM" FORMATREGISTRYKEY="fmt/101">
+        <mets:FLocat LOCTYPE="URL" type="simple" href="representations/submission/data/SIARD.xml">
+        </mets:FLocat>
+      </mets:file>
+    </mets:fileGrp>
+  </mets:fileSec>
+  <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP">
+    <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
+      <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F">
+      </mets:div>
+      <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H">
+      </mets:div>
+      <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F">
+      </mets:div>
+      <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G">
+      </mets:div>
+    </mets:div>
+  </mets:structMap>
+</mets:mets>
+```
+
+
+<a name="appendixb:externalschema"></a>
+
+## 5.2\. Appendix B: External Schema
+
+
+
+<a name="e-arksipmetsextension"></a>
+
+### 5.2.1\. E-ARK SIP METS Extension
+**Location:** [http://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd](http://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd)   
+
+**Context:** XML-schema for the attributes added by SIP and reused in the DIP   
+
+**Note:**     
+
+An extension schema with the added attributes for use in this profile. <br/> 
+The schema is used with a namespace prefix of sip. <br/> 
+
+
+<a name="appendixc:externalvocabularies"></a>
+
+## 5.3\. Appendix C: External Vocabularies
+
+
+<a name="oaispackagetype"></a>
+
+### 5.3.1\. OAIS Package type
+<a name="VocabularyOAISPackageType"></a>
+
+**Maintained By:** DILCIS Board   
+  
+**Location:** [http://earkcsip.dilcis.eu/schema/CSIPVocabularyOAISPackageType.xml](http://earkcsip.dilcis.eu/schema/CSIPVocabularyOAISPackageType.xml)   
+
+**Context:** Values for `@csip:OAISPACKAGETYPE`   
+  
+**Description:**     
+
+Describes the OAIS type the package belongs to in the OAIS reference model.  
+  
+
+<a name="dmdsecstatus"></a>
+
+### 5.3.2\. dmdSec status
+<a name="VocabularyStatus"></a>
+
+**Maintained By:** DILCIS Board   
+  
+**Location:** [http://earkcsip.dilcis.eu/schema/CSIPVocabularyStatus.xml](http://earkcsip.dilcis.eu/schema/CSIPVocabularyStatus.xml)   
+
+**Context:** Values for `dmdSec/@STATUS`   
+  
+**Description:**     
+
+Describes the status of the descriptive metadata section (dmdSec) which is supported by the profile.  
+  
+
+<a name="appendixd:afulllistofe-arkdiprequirements"></a>
+
+## 5.4\. Appendix D: A Full List of E-ARK DIP Requirements
+
+|  ID     | Name, Location & Description | Card & Level |
+| ------- | ---------------------------- | ------------ |
+| <a name="DIP1"></a>**DIP1** | **Package Identifier** <br/> `mets/@OBJID` <br/> Note that the value of the `mets/@OBJID attribute` for the DIP is expected to be different from the SIP and AIP to reflect the creation of a new package. | **1..1** <br/> MUST |
+| <a name="DIP2"></a>**DIP2** | **METS Profile** <br/> `mets/@PROFILE` <br/> The value is set to "https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml". | **1..1** <br/> MUST |
+| <a name="DIP3"></a>**DIP3** | **OAIS Package type information** <br/> `metsHdr[@csip:OAISPACKAGETYPE=`DIP`]` <br/> The in CSIP added attribute `@csip:OAISPACKAGETYPE` is used with the value "DIP". <br/> **See also:** [OAIS Package type](#VocabularyOAISPackageType) | **1..1** <br/> MUST |
+| <a name="DIP4"></a>**DIP4** | **Status of the descriptive metadata** <br/> `dmdSec/@STATUS` <br/> Indicates the status of the package using a fixed vocabulary. The status SHOULD in a DIP be set to "CURRENT". <br/> **See also:** [dmdSec status](#VocabularyStatus) | **0..1** <br/> SHOULD |
+| <a name="REF_CSIP_1"></a>**REF_CSIP_1** | **Administrative metadata** <br/>  <br/> The DIP <amdSec> element should comply with  <br/>  amdSec requirements in the CSIP profile. |  <br/> SHOULD |
+| <a name="REF_CSIP_2"></a>**REF_CSIP_2** | **File section** <br/>  <br/> The DIP fileSec element should comply with  <br/>  fileSec requirements in the CSIP profile. |  <br/> SHOULD |
+| <a name="REF_CSIP_3"></a>**REF_CSIP_3** | **Structural description of the package** <br/>  <br/> The DIP structMap element should comply with  <br/>  structMap requirements in the CSIP profile. |  <br/> SHOULD |
+| <a name="REF_METS_1"></a>**REF_METS_1** | **structLink** <br/>  <br/> Section not defined or used in CSIP or DIP, additional own uses may occur. <br/> Information regarding the structural links is found in the  <br/> METS Primer |  <br/> MAY |
+| <a name="REF_METS_2"></a>**REF_METS_2** | **behaviorSec** <br/>  <br/> Section not defined or used in CSIP or DIP, additional own uses may occur. <br/> Information regarding the behavior section is found in the  <br/> METS Primer |  <br/> MAY |
+
+<a name="bibliography"></a>
+
+# 6\. Bibliography
 Bredenberg, Karin, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
 Sven Schlarb, Andrew Wilson, et al. 2018. Common Specification for Information Packages (Csip). ERCIM
 News. 2.0.0-DRAFT ed. Digital Information LifeCycle Interoperability Standard Board (DILCIS Board).
-http://earkcsip.dilcis.eu.
+[http://earkcsip.dilcis.eu/](http://earkcsip.dilcis.eu/)
 
 OAIS. 2012. Reference Model for an Open Archival Information System. CCSDS 650.0-M-2 (Magenta
-Book). CCSDS - Consultative Committee for Space Data Systems. http://public.ccsds.org/publications/
-archive/650x0b1.pdf.
+Book). CCSDS - Consultative Committee for Space Data Systems.
+[http://public.ccsds.org/publications/archive/650x0b1.pdf](http://public.ccsds.org/publications/archive/650x0b1.pdf).
 
 PREMIS. 2017. PREMIS Data Dictionary for Preservation Metadata, Version 3.0. The Library of Congress.
-https://www.loc.gov/standards/premis/v3/index.html.
+[https://www.loc.gov/standards/premis/v3/index.html](https://www.loc.gov/standards/premis/v3/index.html).
 
 
-# I. Acknowledgements
-The E-ARK Dissemination Information Package (DIP) Specification was first developed within the E-ARK project in 2014 – 2017. E-ARK was an EC-funded pilot action project in the Competitiveness and Innovation Programme 2007- 2013, Grant Agreement no. 620998 under the Policy Support Programme.
-
-Since the scope of the E-ARK 2014-2017 DIP specification was linked to a reference implementation, specific Content Information Types, and product development with pilot actions it was a 100 pages long document. The scope of this E-ARK DIP Specification is not the same, the document has been shortened heavily and therefore we currently only have two authors credited. This does not mean that the current authors are the only ones behind this specification. We rely heavily on the work previously done.
-
-The authors of this specification would like to thank all national archives, tool developers and other stakeholders who provided valuable knowledge about their requirements for information packages and feedback to this and previous versions of the specification.
+# Postface
 
 
-# II. Contact & Feedback
-The E-ARK DIP specification is maintained by the Digital Information LifeCycle Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback on the current document please consult the website http://www.dilcis.eu/ or https://github.com/dilcisboard or contact us at <info@dilcis.eu>  
-
-# III. Authors
-
+## I. Authors
 
 | Name                             | Organisation                                       |
 | -------------------------------- | -------------------------------------------------- |
@@ -405,11 +643,42 @@ The E-ARK DIP specification is maintained by the Digital Information LifeCycle I
 | Phillip Tømmerholt               | Danish National Archives                           |
 
 
-# IV. Revision History
+## II. Revision History
 
 | Revision No. | Date       | Authors(s)                       | Organisation | Description                                                           |
 |--------------|------------|----------------------------------|--------------|----------------------------|
-| 1.0          | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Review version             |
-| 1.0.1        | 20.03.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
-| 1.0.2        | 26.04.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
-| 1.1.0        | 27.05.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Align with CSIP            |
+| 2.0-DRAFT    | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Review version             |
+| 2.0-RC       | 20.03.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
+| 2.0-RC2      | 26.04.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
+| 2.0.0        | 27.05.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Align with CSIP            |
+| 2.0.1        | 09.09.2019 | Carl Wilson <br/>Karin Bredenberg         | OPF <br/>SNA| Layout and PDF Generation  |
+
+
+III Acknowledgements
+----------------
+The E-ARK Dissemination Information Package (DIP) Specification was first
+developed within the E-ARK project in 2014 – 2017. E-ARK was an EC-funded pilot
+action project in the Competitiveness and Innovation Programme 2007- 2013, Grant
+Agreement no. 620998 under the Policy Support Programme.
+
+Since the scope of the E-ARK 2014-2017 DIP specification was linked to a
+reference implementation, specific Content Information Types, and product
+development with pilot actions it was a 100 pages long document. The scope of
+this E-ARK DIP Specification is not the same, the document has been shortened
+heavily and therefore we currently only have two authors credited. This does not
+mean that the current authors are the only ones behind this specification. We
+rely heavily on the work previously done.
+
+The authors of this specification would like to thank all national archives,
+tool developers and other stakeholders who provided valuable knowledge about
+their requirements for information packages and feedback to this and previous
+versions of the specification.
+
+
+IV Contact & Feedback
+------------------
+The E-ARK DIP specification is maintained by the Digital Information LifeCycle
+Interoperability Standard Board (DILCIS Board). For further information about
+the DILCIS Board or feedback on the current document please consult the website
+http://www.dilcis.eu/ or https://github.com/dilcisboard or contact us at
+<info@dilcis.eu>.
